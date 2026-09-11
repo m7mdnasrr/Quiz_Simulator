@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Sign in</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════
+     AUTH GATE
+     ══════════════════════════════════════════════════════════════ -->
+<div id="authGate" class="auth-gate">
+  <form id="authForm" class="auth-card" autocomplete="off" novalidate>
+    <input
+      id="authCode"
+      class="auth-input"
+      type="password"
+      placeholder="Enter access code"
+      autocomplete="off"
+      autocapitalize="off"
+      autocorrect="off"
+      spellcheck="false"
+      maxlength="64"
+    />
+    <button id="authSubmit" class="auth-submit" type="submit">Enter</button>
+    <div id="authError" class="auth-error" role="alert"></div>
+  </form>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     APP
+     ══════════════════════════════════════════════════════════════ -->
+<div id="appRoot" hidden>
+
+  <!-- ─── SCREEN 1 — START ─────────────────────────────────── -->
+  <section id="screen-start" class="screen active">
+    <div class="start-shell">
+      <div class="start-brand">
+        <div class="fn-logo">FORTINET<span>.</span></div>
+        <div class="fn-sub">Certification Exam Simulator</div>
+      </div>
+
+      <div class="start-card">
+        <h1>Certification Exam Simulator</h1>
+        <p class="lead">
+          Select a certification below. Each simulation is drawn randomly from the full
+          question bank, balanced across every exam domain, and timed against the real
+          duration and pass mark.
+        </p>
+
+        <div class="exam-grid" id="examGrid" role="list"></div>
+
+        <div class="pool-info" id="poolInfo" hidden>
+          <span id="poolSummary"></span>
+        </div>
+
+        <div class="last-attempt" id="lastAttempt" hidden>
+          <span class="last-attempt-label">Last attempt</span>
+          <span class="last-attempt-body" id="lastAttemptBody"></span>
+          <button type="button" class="last-attempt-clear" id="btnClearCache">Clear cache</button>
+        </div>
+
+        <button id="btnStartExam" class="btn btn-primary btn-xl" disabled>Select an Exam</button>
+
+        <p class="fineprint">
+          Unofficial study aid. Not affiliated with, endorsed by, or sponsored by Fortinet, Inc.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCREEN 2 — EXAM ──────────────────────────────────── -->
+  <section id="screen-exam" class="screen">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="fn-logo sm">FORTINET<span>.</span></div>
+        <div class="exam-title" id="examTitleBar">Certification Exam</div>
+      </div>
+
+      <div class="topbar-center">
+        <div class="timer" id="timerDisplay" aria-live="polite">
+          <span class="timer-label">Time Remaining</span>
+          <span class="timer-value" id="timerValue">01:55:00</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="counter">
+          <span id="currentQNum">1</span>
+          <span class="counter-sep">/</span>
+          <span id="totalQNum">50</span>
+        </div>
+        <button id="btnSubmitTop" class="btn btn-danger">Review &amp; Submit</button>
+      </div>
+    </header>
+
+    <div class="exam-body">
+      <main class="question-pane">
+        <div class="q-meta">
+          <span class="q-id" id="qId">Question 1</span>
+          <span class="q-cat" id="qCategory">Category</span>
+          <span class="q-type" id="qType">Single Answer</span>
+        </div>
+
+        <div class="q-scroll">
+          <h2 class="q-text" id="qText"></h2>
+
+          <figure class="q-figure" id="qFigure" hidden>
+            <img id="qImage" src="" alt="Exhibit / topology diagram" />
+            <figcaption id="qImageCaption">Exhibit</figcaption>
+          </figure>
+
+          <div class="choices" id="choiceList" role="group" aria-label="Answer choices"></div>
+        </div>
+      </main>
+
+      <!-- ─── Pinned navigator (always visible) ──────────────── -->
+      <aside class="nav-panel" id="navPanel" aria-label="Question navigator">
+        <div class="nav-panel-head">
+          <h3>Question Navigator</h3>
+        </div>
+
+        <div class="nav-actions">
+          <button class="nav-action" id="btnNextUnanswered" type="button">
+            <span class="ico">⏭</span> Next Unanswered
+          </button>
+          <button class="nav-action" id="btnNextFlagged" type="button">
+            <span class="ico">⚑</span> Next Flagged
+          </button>
+        </div>
+
+        <div class="legend">
+          <span><i class="dot dot-current"></i>Current</span>
+          <span><i class="dot dot-answered"></i>Answered</span>
+          <span><i class="dot dot-flagged"></i>Flagged</span>
+          <span><i class="dot dot-empty"></i>Unseen</span>
+        </div>
+
+        <div class="palette" id="palette" role="list"></div>
+
+        <div class="nav-panel-foot">
+          <div class="stat-row"><span>Answered</span><strong id="statAnswered">0</strong></div>
+          <div class="stat-row"><span>Flagged</span><strong id="statFlagged">0</strong></div>
+          <div class="stat-row"><span>Remaining</span><strong id="statRemaining">50</strong></div>
+          <button class="nav-submit" id="btnNavSubmit" type="button">Review &amp; Submit</button>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="actionbar">
+      <div class="actionbar-left">
+        <label class="flag-toggle" for="chkFlag">
+          <input type="checkbox" id="chkFlag" />
+          <span class="flag-box">⚑</span>
+          <span>Flag for Review</span>
+        </label>
+      </div>
+
+      <div class="actionbar-right">
+        <button id="btnPrev" class="btn btn-secondary">‹ Previous</button>
+        <button id="btnNext" class="btn btn-primary">Next ›</button>
+      </div>
+    </footer>
+  </section>
+
+  <!-- ─── SCREEN 3 — SCORE ─────────────────────────────────── -->
+  <section id="screen-score" class="screen">
+    <div class="score-shell">
+      <div class="score-hero">
+        <div class="score-hero-left">
+          <div class="result-badge" id="resultBadge">PASS</div>
+          <div class="score-hero-text">
+            <h1 id="scoreHeadline">Examination Complete</h1>
+            <p id="scoreSubline">—</p>
+          </div>
+        </div>
+        <div class="score-hero-right">
+          <div class="big-score" id="bigScore">0%</div>
+          <div class="big-score-label">Overall Score</div>
+        </div>
+      </div>
+
+      <div class="score-kpis">
+        <div class="kpi kpi-green"><span class="kpi-val" id="kpiCorrect">0</span><span class="kpi-lbl">Correct</span></div>
+        <div class="kpi kpi-red"><span class="kpi-val" id="kpiIncorrect">0</span><span class="kpi-lbl">Incorrect</span></div>
+        <div class="kpi kpi-grey"><span class="kpi-val" id="kpiUnanswered">0</span><span class="kpi-lbl">Unanswered</span></div>
+        <div class="kpi kpi-blue"><span class="kpi-val" id="kpiTime">00:00</span><span class="kpi-lbl">Time Used</span></div>
+      </div>
+
+      <div class="score-panel">
+        <h2>Performance by Domain</h2>
+        <p class="panel-sub">Passing standard for this simulator is <strong id="passMarkLabel">70%</strong>. Domain weighting follows the published exam blueprint.</p>
+        <div class="domain-list" id="domainList"></div>
+      </div>
+
+      <div class="score-panel">
+        <h2>Question Outcome Map</h2>
+        <p class="panel-sub">Each cell is one of the delivered items. Hover for detail.</p>
+        <div class="outcome-map" id="outcomeMap"></div>
+      </div>
+
+      <div class="score-actions">
+        <button id="btnReviewAnswers" class="btn btn-primary btn-lg">Review Answers</button>
+        <button id="btnRetake" class="btn btn-secondary btn-lg">Retake Exam</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCREEN 4 — REVIEW ────────────────────────────────── -->
+  <section id="screen-review" class="screen">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="fn-logo sm">FORTINET<span>.</span></div>
+        <div class="exam-title">Answer Review</div>
+      </div>
+      <div class="topbar-right">
+        <div class="review-filters">
+          <button class="chip chip-active" data-filter="all">All</button>
+          <button class="chip" data-filter="incorrect">Incorrect</button>
+          <button class="chip" data-filter="correct">Correct</button>
+          <button class="chip" data-filter="flagged">Flagged</button>
+        </div>
+        <button id="btnBackToScore" class="btn btn-secondary">Back to Score</button>
+        <button id="btnRetake2" class="btn btn-primary">Retake Exam</button>
+      </div>
+    </header>
+
+    <div class="review-body">
+      <div class="review-summary" id="reviewSummary"></div>
+      <div class="review-list" id="reviewList"></div>
+    </div>
+  </section>
+
+</div><!-- /#appRoot -->
+
+
+<script src="js/storage.js"></script>
+<script src="js/registry.js"></script>
+<script src="js/banks/fortios.js"></script>
+<script src="js/banks/fortianalyzer.js"></script>
+<script src="js/banks/fortimanager.js"></script>
+<script src="js/banks/fortisiem.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
