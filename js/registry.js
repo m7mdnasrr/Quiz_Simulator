@@ -33,7 +33,7 @@
         'Routing',
         'VPN'
       ],
-      imageDir:        'images/fortios',
+      imageDir:        'images/FortiOS',
       totalQuestions:  50,
       durationSeconds: 115 * 60,
       passPercent:     80,
