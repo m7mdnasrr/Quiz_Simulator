@@ -22,7 +22,7 @@
     fos: {
       key:        'fos',
       name:       'FortiOS 7.6 Administrator',
-      short:      'FortiOS 7.6',
+      short:      'FortiOS 7.6 Administrator',
       version:    'NSE 4 · FortiOS 7.6 Administrator',
       icon:       '🛡',
       blurb:      'Firewall policies, security profiles, routing and VPN on FortiGate.',
@@ -44,8 +44,8 @@
     faz: {
       key:        'faz',
       name:       'FortiAnalyzer 7.6 Analyst',
-      short:      'FortiAnalyzer 7.6',
-      version:    'NSE 5 · Analyst',
+      short:      'FortiAnalyzer 7.6 Analyst',
+      version:    'NSE 5 · FortiAnalyzer 7.6 Analyst',
       icon:       '📊',
       blurb:      'Log analysis, event handling, playbooks, reports and SOC workflows.',
       domainOrder:[
@@ -67,9 +67,9 @@
 
     fsiem: {
       key:        'fsiem',
-      name:       'FortiSIEM 7.6 Analyst',
-      short:      'FortiSIEM 7.6',
-      version:    'NSE 5 · FortiSIEM',
+      name:       'FortiSIEM 7.4 Analyst',
+      short:      'FortiSIEM 7.4',
+      version:    'NSE 6 · FortiSIEM 7.4 Analyst',
       icon:       '🔎',
       blurb:      'Event correlation, CMDB, analytics, rules and incident response.',
       domainOrder:[
