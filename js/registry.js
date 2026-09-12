@@ -106,7 +106,7 @@
         'Reports & Dashboards',
         'Integrations & Fabric'
       ],
-      imageDir:        'images-fsiem',
+      imageDir:        'images/fsiem',
       totalQuestions:  45,
       durationSeconds: 90 * 60,
       passPercent:     80,
