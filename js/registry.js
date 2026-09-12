@@ -33,8 +33,8 @@
         'Routing',
         'VPN'
       ],
-      imageDir:        'images/fortios',
-      totalQuestions:  50,
+      imageDir:        'images/FortiOS',
+      totalQuestions:  150,
       durationSeconds: 115 * 60,
       passPercent:     80,
       available:       true,
@@ -58,7 +58,7 @@
         'System Configuration'
       ],
       imageDir:        'images/faz',
-      totalQuestions:  35,
+      totalQuestions:  135,
       durationSeconds: 65 * 60,
       passPercent:     80,
       available:       true,
