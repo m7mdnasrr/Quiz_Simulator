@@ -82,7 +82,7 @@
         'Provisioning & Scripts',
         'Security Fabric & Integrations'
       ],
-      imageDir:        'images-fmgr',
+      imageDir:        'images/fmgr',
       totalQuestions:  45,
       durationSeconds: 90 * 60,
       passPercent:     80,
@@ -106,9 +106,9 @@
         'Reports & Dashboards',
         'Integrations & Fabric'
       ],
-      imageDir:        'images-fsiem',
-      totalQuestions:  45,
-      durationSeconds: 90 * 60,
+      imageDir:        'images/fsiem',
+      totalQuestions:  40,
+      durationSeconds: 70 * 60,
       passPercent:     80,
       available:       true,        // reserved; bank stub means card shows "Coming Soon"
       bank:            []
