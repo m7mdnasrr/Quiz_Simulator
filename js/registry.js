@@ -65,10 +65,10 @@
       bank:            []
     },
 
-        fsiem: {
+    fsiem: {
       key:        'fsiem',
-      name:       'FortiSIEM 7.4 Analyst',
-      short:      'FortiSIEM 7.4',
+      name:       'FortiSIEM 7.6 Analyst',
+      short:      'FortiSIEM 7.6',
       version:    'NSE 5 · FortiSIEM',
       icon:       '🔎',
       blurb:      'Event correlation, CMDB, analytics, rules and incident response.',
@@ -86,8 +86,8 @@
       available:       true,
       bank:            []
     },
-	
-	fmgr: {
+
+    fmgr: {
       key:        'fmgr',
       name:       'FortiManager 7.6 Administrator',
       short:      'FortiManager 7.6',
@@ -108,37 +108,10 @@
       totalQuestions:  45,
       durationSeconds: 90 * 60,
       passPercent:     80,
-      available:       true,        // reserved; bank stub means card shows "Coming Soon"
-      bank:            []
-    },
-
-<<<<<<< Updated upstream
-    fsiem: {
-      key:        'fsiem',
-      name:       'FortiSIEM 7.6 Analyst',
-      short:      'FortiSIEM 7.6',
-      version:    'NSE 6 · SIEM',
-      icon:       '🔎',
-      blurb:      'Event correlation, CMDB, analytics, rules and incident response.',
-      domainOrder:[
-        'Deployment & Architecture',
-        'Data Collection & Parsers',
-        'CMDB & Discovery',
-        'Analytics & Rules',
-        'Incidents & Remediation',
-        'Reports & Dashboards',
-        'Integrations & Fabric'
-      ],
-      imageDir:        'images/fsiem',
-      totalQuestions:  40,
-      durationSeconds: 70 * 60,
-      passPercent:     80,
-      available:       true,        // reserved; bank stub means card shows "Coming Soon"
+      available:       true,
       bank:            []
     }
 
-=======
->>>>>>> Stashed changes
   };
 
   /* Detect the "Coming Soon" state for a card when its bank is empty. */
