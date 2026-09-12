@@ -65,7 +65,29 @@
       bank:            []
     },
 
-    fmgr: {
+        fsiem: {
+      key:        'fsiem',
+      name:       'FortiSIEM 7.4 Analyst',
+      short:      'FortiSIEM 7.4',
+      version:    'NSE 5 · FortiSIEM',
+      icon:       '🔎',
+      blurb:      'Event correlation, CMDB, analytics, rules and incident response.',
+      domainOrder:[
+        'Analytics',
+        'FortiEDR Security Settings and Policies',
+        'Rules and Subpatterns',
+        'Incidents, Notifications, and Remediation',
+        'ML, UEBA, and ZTNA'
+      ],
+      imageDir:        'images/fsiem',
+      totalQuestions:  40,
+      durationSeconds: 70 * 60,
+      passPercent:     80,
+      available:       true,
+      bank:            []
+    },
+	
+	fmgr: {
       key:        'fmgr',
       name:       'FortiManager 7.6 Administrator',
       short:      'FortiManager 7.6',
@@ -90,6 +112,7 @@
       bank:            []
     },
 
+<<<<<<< Updated upstream
     fsiem: {
       key:        'fsiem',
       name:       'FortiSIEM 7.6 Analyst',
@@ -114,6 +137,8 @@
       bank:            []
     }
 
+=======
+>>>>>>> Stashed changes
   };
 
   /* Detect the "Coming Soon" state for a card when its bank is empty. */
