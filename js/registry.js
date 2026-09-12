@@ -35,7 +35,7 @@
       ],
       imageDir:        'images/FortiOS',
       totalQuestions:  150,
-      durationSeconds: 115 * 60,
+      durationSeconds: 100 * 60,
       passPercent:     80,
       available:       true,
       bank:            []
@@ -59,7 +59,7 @@
       ],
       imageDir:        'images/faz',
       totalQuestions:  135,
-      durationSeconds: 65 * 60,
+      durationSeconds: 80 * 60,
       passPercent:     80,
       available:       true,
       bank:            []
