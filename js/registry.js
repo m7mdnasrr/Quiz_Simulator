@@ -93,7 +93,7 @@
         'Troubleshooting'
       ],
       imageDir:        'images/fmgr',
-      totalQuestions:  45,
+      totalQuestions:  145,
       durationSeconds: 90 * 60,
       passPercent:     80,
       available:       true,
