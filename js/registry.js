@@ -71,7 +71,7 @@
         'ML, UEBA, and ZTNA'
       ],
       imageDir:        'images/fsiem',
-      totalQuestions:  40,
+      totalQuestions:  140,
       durationSeconds: 70 * 60,
       passPercent:     80,
       available:       true,
