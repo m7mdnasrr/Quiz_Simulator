@@ -58,9 +58,9 @@
 
     fsiem: {
       key:        'fsiem',
-      name:       'FortiSIEM 7.6 Analyst',
-      short:      'FortiSIEM 7.6',
-      version:    'NSE 5 · FortiSIEM',
+      name:       'FortiSIEM 7.4 Analyst',
+      short:      'FortiSIEM 7.4,
+      version:    'NSE 6 · FortiSIEM',
       icon:       '🔎',
       blurb:      'Event correlation, CMDB, analytics, rules and incident response.',
       domainOrder:[
