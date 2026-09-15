@@ -8,21 +8,12 @@
 (function () {
   'use strict';
 
-  /* ─────────────────────────────────────────────────────────
-     EXAM DEFINITIONS
-     ─────────────────────────────────────────────────────────
-     To add a new exam in the future:
-       1. Create js/banks/<exam>.js
-       2. Add a metadata entry here with the same key
-       3. Add a <script> tag for the bank in index.html
-     Nothing else needs to change.
-     ───────────────────────────────────────────────────────── */
   const EXAMS = {
 
     fos: {
       key:        'fos',
       name:       'FortiOS 7.6 Administrator',
-      short:      'FortiOS 7.6 Administrator',
+      short:      'FortiOS 7.6',
       version:    'NSE 4 · FortiOS 7.6 Administrator',
       icon:       '🛡',
       blurb:      'Firewall policies, security profiles, routing and VPN on FortiGate.',
@@ -35,7 +26,7 @@
       ],
       imageDir:        'images/FortiOS',
       totalQuestions:  150,
-      durationSeconds: 100 * 60,
+      durationSeconds: 115 * 60,
       passPercent:     80,
       available:       true,
       bank:            []
@@ -44,8 +35,8 @@
     faz: {
       key:        'faz',
       name:       'FortiAnalyzer 7.6 Analyst',
-      short:      'FortiAnalyzer 7.6 Analyst',
-      version:    'NSE 5 · FortiAnalyzer 7.6 Analyst',
+      short:      'FortiAnalyzer 7.6',
+      version:    'NSE 5 · Analyst',
       icon:       '📊',
       blurb:      'Log analysis, event handling, playbooks, reports and SOC workflows.',
       domainOrder:[
@@ -59,7 +50,7 @@
       ],
       imageDir:        'images/faz',
       totalQuestions:  135,
-      durationSeconds: 80 * 60,
+      durationSeconds: 65 * 60,
       passPercent:     80,
       available:       true,
       bank:            []
@@ -67,9 +58,9 @@
 
     fsiem: {
       key:        'fsiem',
-      name:       'FortiSIEM 7.4 Analyst',
-      short:      'FortiSIEM 7.4',
-      version:    'NSE 6 · FortiSIEM 7.4 Analyst',
+      name:       'FortiSIEM 7.6 Analyst',
+      short:      'FortiSIEM 7.6',
+      version:    'NSE 5 · FortiSIEM',
       icon:       '🔎',
       blurb:      'Event correlation, CMDB, analytics, rules and incident response.',
       domainOrder:[
@@ -80,7 +71,7 @@
         'ML, UEBA, and ZTNA'
       ],
       imageDir:        'images/fsiem',
-      totalQuestions:  140,
+      totalQuestions:  40,
       durationSeconds: 70 * 60,
       passPercent:     80,
       available:       true,
@@ -95,14 +86,11 @@
       icon:       '⚙',
       blurb:      'Centralized device management, ADOMs, provisioning and SD-WAN.',
       domainOrder:[
-        'Deployment & System Configuration',
-        'ADOMs & Administrative Domains',
+        'Administration',
         'Device Manager',
-        'Policy & Objects',
-        'SD-WAN Manager',
-        'VPN Manager',
-        'Provisioning & Scripts',
-        'Security Fabric & Integrations'
+        'Policy and Objects',
+        'Advanced Configuration',
+        'Troubleshooting'
       ],
       imageDir:        'images/fmgr',
       totalQuestions:  45,
