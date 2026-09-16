@@ -26,7 +26,7 @@
       ],
       imageDir:        'images/FortiOS',
       totalQuestions:  150,
-      durationSeconds: 115 * 60,
+      durationSeconds: 100 * 60,
       passPercent:     80,
       available:       true,
       bank:            []
