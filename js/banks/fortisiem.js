@@ -840,6 +840,38 @@
       ],
       correct:[0,1],
       explanation:'The FortiClient EMS integration exposes ZTNA tags and vulnerability scan events to FortiSIEM.'
+    },
+    {
+      id:'FSIEM-32', category:C.ML_UEBA, type:'single', image:'32',
+      text:'Refer to the exhibit. An analyst wants to perform a KMeans machine learning (ML) job on this data. How many N clusters would be a good fit for the data?',
+      choices:['Two','50','100','One'],
+      correct:[0],
+      explanation:'The scatter plot shows two clearly separated groupings of data points, so N=2 is the natural cluster count.'
+    },
+    {
+      id:'FSIEM-38', category:C.INCIDENT, type:'multiple', image:'38',
+      text:'Refer to the exhibit. Which two actions can you select in an automation policy to trigger an API call to block an IP address on a FortiGate?',
+      choices:[
+        'Open Remedy ticket using the configuration set in',
+        'Send Email/SMS/Webhook to the target users',
+        'Invoke an Integration Policy',
+        'Run Remediation/Script',
+        'Run Playbook on Incident Trigger'
+      ],
+      correct:[2,4],
+      explanation:'Blocking an IP via API on FortiGate is achieved through an integration policy (which calls the Fortinet Security Fabric) or by running a playbook whose connector invokes the FortiGate API.'
+    },
+    {
+      id:'FSIEM-40', category:C.RULES, type:'single', image:'40',
+      text:'Refer to the exhibits. You are troubleshooting why the rule shown in the exhibit is generating incidents for successful Remote Desktop Protocol (RDP) connections with correct logins. It should only be triggering when a person fails a login three or more times to the target device when connecting with RDP. What is causing the rule to be triggered by correct login events?',
+      choices:[
+        'The subpattern relationship "RDP_Connection:User = Failed_Logon:User" never matches.',
+        'The Boolean between the subpatterns is incorrect.',
+        'The attribute types in the subpatterns do not match.',
+        'The RDP login is different from the login used to access the target device.'
+      ],
+      correct:[2],
+      explanation:'The subpatterns compare attributes of different data types (e.g. one is an IP address, one is a username), so the join condition never resolves the way the rule author intended.'
     }
 
   ];
