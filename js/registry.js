@@ -98,7 +98,29 @@
       passPercent:     80,
       available:       true,
       bank:            []
-    }
+    },
+
+      fortisoar: {
+      key:        'fortisoar',
+      name:       'FortiSOAR 7.6 Administrator',
+      short:      'FortiSOAR 7.6',
+      version:    'NSE 7 · Security Operations',
+      blurb:      'Incident response, playbooks, automation, threat hunting and integrations.',
+      domainOrder:[
+        'Incident Response',
+        'Playbooks & Automation',
+        'Threat Hunting',
+        'Threat Hunting & Analytics',
+        'Integration & Connectors',
+        'Architecture & Administration'
+      ],
+      imageDir:        'images/fortisoar',
+      totalQuestions:  150,
+      durationSeconds: 105 * 60, // 105 minutes
+      passPercent:     70,
+      available:       true,
+      bank:            []
+    },
 
   };
 
