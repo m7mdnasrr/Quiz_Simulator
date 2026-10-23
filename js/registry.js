@@ -116,8 +116,8 @@
       ],
       imageDir:        'images/fortisoar',
       totalQuestions:  150,
-      durationSeconds: 105 * 60, // 105 minutes
-      passPercent:     70,
+      durationSeconds: 95 * 60, // 105 minutes
+      passPercent:     80,
       available:       true,
       bank:            []
     },
